@@ -1,4 +1,4 @@
-#h1 Notes from On Lisp
+# Notes from On Lisp
 
 ## 2.2 Defining functions
 In lisp we can #' to get the definition of a function
@@ -10,7 +10,7 @@ In julia,
 > function double(x) x*2 end
 > double
 double (generic function with 1 method)
-> > code_typed(double,(Int,))                                                                                                    
+> code_typed(double,(Int,))                                                                                                    
 1-element Array{Any,1}:
  :($(Expr(:lambda, {:x}, {{},{{:x,Int64,0}},{}}, quote  # none, line 1:
         return top(box)(Int64,top(mul_int)(x::Int64,2))::Int64
