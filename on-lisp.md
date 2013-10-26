@@ -80,8 +80,10 @@ hasy (generic function with 1 method)
 
 julia> hasy()
 10
+~~~
 
 julia has a let block! Can use it to copy example
+~~~
 julia> let y = 22
          function plusy(x)
            x + y
