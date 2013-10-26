@@ -120,3 +120,36 @@ julia> a(4)
 Next example uses optional arguments. How should we do that? Is https://github.com/JuliaLang/Options.jl the right way?
 
 For example in Figure 2.1, what's a Julian way to do it?
+
+## 2.7 Local Functions
+
+Comment on how let doesn't see previous let values, so you need labels, doesn't apply
+julia> let x = 10, y = 2 * x
+         println(x); println(y)
+       end
+10
+20
+
+function count_instances (obj, lsts)
+  let instances_in = (lst ->
+    ...      
+
+Would we ever do this in julia, rather than iterating?
+
+## 2.8 Tail recursion
+
+Julia doesn't optmize this! Maybe do some examples of trampolining?
+
+## 2.9 Compilation
+
+Not really relevant. Could play with JIT here
+
+## 2.10 Functions from Lists
+
+Not relevant.
+
+# Chapter 3: functional programming
+
+## 3.1 Functional Design
+
+Some comments on why functional programming is better
