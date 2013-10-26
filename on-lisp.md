@@ -23,3 +23,35 @@ Has apply, just like lisp. Unlike CL, you don't even have to quote symbols!
 
 Functions can take functions
 > sort([1,2,3,-1,-2], by=abs)
+
+If filter didn't exist, we'd have to write it
+function filter(f::Function, a::Vector)
+    r = Array(eltype(a), 0)
+    for i = 1:length(a)
+        if f(a[i])
+            push!(r, a[i])
+        end
+    end
+    return r
+end
+
+## 2.4 Functions as Properties
+Multiple dispatch example here???
+
+## 2.5 Scope
+julia> y = 7
+7
+
+julia> function plusy(x)
+         x + y
+       end
+plusy (generic function with 1 method)
+
+julia> plusy(0)
+7
+
+julia> y = 10
+10
+
+julia> plusy(0)
+10
