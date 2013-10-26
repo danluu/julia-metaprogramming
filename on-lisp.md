@@ -55,3 +55,68 @@ julia> y = 10
 
 julia> plusy(0)
 10
+
+julia> function hasy()
+         y = 3
+         plusy(0)
+       end
+hasy (generic function with 1 method)
+
+julia> hasy
+hasy (generic function with 1 method)
+
+julia> hasy()
+10
+
+julia has a let block! Can use it to copy example
+julia> let y = 22
+         function plusy(x)
+           x + y
+         end
+       end
+plusy (generic function with 1 method)
+
+julia> plusy(3)
+25
+
+julia> let y = 100
+         plusy(3)
+       end
+25
+
+## 2.6 Closures
+Can we do this? Apparently not.
+
+julia> let counter = 0
+         function new_id()
+           counter += 1
+         end
+         function reset_id()
+           counter = 0
+         end
+       end
+reset_id (generic function with 1 method)
+
+julia> new_id
+ERROR: new_id not defined
+
+How is it that the above let / plusy example works but this doesn't?
+
+### Example 2:
+julia> function make_adder(n)
+         (x -> x + n)
+       end
+make_adder (generic function with 1 method)
+
+julia> a = make_adder(3)
+(anonymous function)
+
+julia> a(3)
+6
+
+julia> a(4)
+7
+
+Next example uses optional arguments. How should we do that? Is https://github.com/JuliaLang/Options.jl the right way?
+
+For example in Figure 2.1, what's a Julian way to do it?
