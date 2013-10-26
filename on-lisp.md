@@ -118,7 +118,7 @@ julia> new_id
 ERROR: new_id not defined
 ~~~
 
-How is it that the above let / plusy example works but this doesn't?
+How is it that the above `let / plusy` example works but this doesn't?
 
 ### Example 2:
 ~~~
