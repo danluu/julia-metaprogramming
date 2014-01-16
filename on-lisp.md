@@ -1,5 +1,7 @@
 # Notes from On Lisp
 
+Just reading On Lisp and working through it in Julia. Nothing to see here
+
 ## 2.2 Defining functions
 In lisp we can #' to get the definition of a function
 ~~~
