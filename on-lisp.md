@@ -122,6 +122,57 @@ ERROR: new_id not defined
 
 How is it that the above `let / plusy` example works but this doesn't?
 
+> Does this count?
+
+~~~
+function make_counter()
+          counter = 0            
+          (function ()
+                  counter += 1
+          end,               
+          function ()
+                  counter = 0
+          end)
+end 
+
+~~~
+
+Usage:
+
+~~~
+julia> (new_id,reset_id) = make_counter()
+((anonymous function),(anonymous function))
+
+julia> reset_id()
+0
+
+julia> new_id()
+1
+
+julia> new_id()
+2
+
+julia> new_id()
+3
+
+julia> reset_id()
+0
+
+julia> reset_id()
+0
+
+julia> new_id()
+1
+
+julia> new_id()
+2
+
+julia> new_id()
+3
+
+~~~
+
+
 ### Example 2:
 ~~~
 julia> function make_adder(n)
